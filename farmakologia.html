@@ -5,40 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmakologia - Kompendium PRM</title>
     <style>
-        :root { --bg-color: #f4f6f9; --text-color: #333; --sidebar-bg: #ffffff; --accent-color: #e63946; --card-bg: #ffffff; --border-color: #ddd; --group-title-color: #495057; }
-        [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; --group-title-color: #adb5bd; }
+        :root { --bg-color: #f4f6f9; --text-color: #333; --sidebar-bg: #ffffff; --accent-color: #e63946; --card-bg: #ffffff; --border-color: #ddd; }
+        [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
         body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
-        
-        /* Menu Boczne */
         nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
         .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
         .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
         .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
         .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
-        
-        /* Główna zawartość */
         main { flex: 1; padding: 40px; }
         header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
         .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
-        
-        /* Grupy leków i linie oddzielające */
         .med-group { margin-top: 30px; margin-bottom: 15px; }
-        .med-group-title { font-size: 1.3rem; font-weight: bold; color: var(--accent-color); padding-bottom: 8px; border-bottom: 2px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
-        
-        /* Siatka leków */
+        .med-group-title { font-size: 1.3rem; font-weight: bold; color: var(--accent-color); padding-bottom: 8px; border-bottom: 2px solid var(--border-color); }
         .med-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
         .med-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-color); font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.2s; }
         .med-card:hover { border-color: var(--accent-color); transform: translateY(-3px); }
-
         @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
     </style>
 </head>
 <body data-theme="dark">
     <nav>
-        <a href="./" class="logo">🚑 Kompendium PRM</a>
+        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
         <ul class="menu-items">
-            <li><a href="./">🏠 Strona Główna</a></li>
+            <li><a href="index.html">🏠 Strona Główna</a></li>
             <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
             <li><a href="ekg.html">🫀 EKG</a></li>
             <li><a href="procedury.html">🛠️ Procedury</a></li>
@@ -51,60 +42,54 @@
         </header>
         <p>Wybierz lek, aby zobaczyć jego pełną kartę i dawkowanie:</p>
         
-        <!-- Grupa 1: Kardiologia i Resuscytacja -->
         <div class="med-group">
             <div class="med-group-title">❤️ Resuscytacja i Zaburzenia Rytmu Serca</div>
             <div class="med-list">
                 <a href="adrenalina.html" class="med-card">Adrenalina</a>
-                <a href="amiodaron.html" class="med-card">Amiodaron</a>
-                <a href="atropina.html" class="med-card">Atropina</a>
-                <a href="adenozyna.html" class="med-card">Adenozyna</a>
+                <a href="#" class="med-card">Amiodaron</a>
+                <a href="#" class="med-card">Atropina</a>
+                <a href="#" class="med-card">Adenozyna</a>
             </div>
         </div>
 
-        <!-- Grupa 2: Ostry Zespół Wieńcowy -->
         <div class="med-group">
             <div class="med-group-title">🫀 Ostry Zespół Wieńcowy (OZW) i Krążenie</div>
             <div class="med-list">
-                <a href="aspiryna.html" class="med-card">Aspiryna (ASA)</a>
-                <a href="heparyna.html" class="med-card">Heparyna</a>
-                <a href="nitrogliceryna.html" class="med-card">Nitrogliceryna</a>
+                <a href="#" class="med-card">Aspiryna (ASA)</a>
+                <a href="#" class="med-card">Heparyna</a>
+                <a href="#" class="med-card">Nitrogliceryna</a>
             </div>
         </div>
 
-        <!-- Grupa 3: Przeciwbólowe i Sedacja -->
         <div class="med-group">
             <div class="med-group-title">🧠 Analgezja, Sedacja i Drgawki</div>
             <div class="med-list">
-                <a href="morfina.html" class="med-card">Morfina</a>
-                <a href="fentanyl.html" class="med-card">Fentanyl</a>
-                <a href="ketamina.html" class="med-card">Ketamina</a>
-                <a href="midazolam.html" class="med-card">Midazolam</a>
-                <a href="diazepam.html" class="med-card">Diazepam</a>
-                <a href="paracetamol.html" class="med-card">Paracetamol</a>
+                <a href="#" class="med-card">Morfina</a>
+                <a href="#" class="med-card">Fentanyl</a>
+                <a href="#" class="med-card">Ketamina</a>
+                <a href="#" class="med-card">Midazolam</a>
+                <a href="#" class="med-card">Diazepam</a>
+                <a href="#" class="med-card">Paracetamol</a>
             </div>
         </div>
 
-        <!-- Grupa 4: Układ Oddechowy -->
         <div class="med-group">
             <div class="med-group-title">🫁 Układ Oddechowy i Anafilaksja</div>
             <div class="med-list">
-                <a href="salbutamol.html" class="med-card">Salbutamol</a>
-                <a href="clemastinum.html" class="med-card">Klemastyna</a>
+                <a href="#" class="med-card">Salbutamol</a>
+                <a href="#" class="med-card">Klemastyna</a>
             </div>
         </div>
 
-        <!-- Grupa 5: Metabolizm i Inne stany nagłe -->
         <div class="med-group">
             <div class="med-group-title">🧪 Cukrzyca, Toksykologia i Krwotoki</div>
             <div class="med-list">
-                <a href="glukoza.html" class="med-card">Glukoza 20% / 40%</a>
-                <a href="glukagon.html" class="med-card">Glukagon</a>
-                <a href="nalokson.html" class="med-card">Nalokson</a>
-                <a href="traneksam.html" class="med-card">Kwas Traneksamowy (TXA)</a>
+                <a href="#" class="med-card">Glukoza 20% / 40%</a>
+                <a href="#" class="med-card">Glukagon</a>
+                <a href="#" class="med-card">Nalokson</a>
+                <a href="#" class="med-card">Kwas Traneksamowy (TXA)</a>
             </div>
         </div>
-
     </main>
     <script>
         function toggleTheme() {
@@ -116,5 +101,3 @@
     </script>
 </body>
 </html>
-
-
