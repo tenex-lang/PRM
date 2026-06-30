@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amiodaron - Kompendium PRM</title>
+    <style>
+        :root { --bg-color: #f4f6f9; --text-color: #333; --sidebar-bg: #ffffff; --accent-color: #e63946; --card-bg: #ffffff; --border-color: #ddd; --section-bg: #f8f9fa; }
+        [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; --section-bg: #1f1f1f; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
+        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
+        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
+        .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
+        main { flex: 1; padding: 40px; max-width: 900px; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; }
+        .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
+        .med-section { background: var(--section-bg); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .med-section h3 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem; }
+        .med-section p, .med-section ul { font-size: 1.05rem; line-height: 1.6; }
+        .med-section ul { margin-left: 20px; }
+        .warning-box { border-left: 5px solid #ffb703; background: rgba(255, 183, 3, 0.1); }
+        .danger-box { border-left: 5px solid #d00000; background: rgba(208, 0, 0, 0.1); }
+        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav>
+        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
+        <ul class="menu-items">
+            <li><a href="index.html">🏠 Strona Główna</a></li>
+            <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
+            <li><a href="ekg.html">🫀 EKG</a></li>
+            <li><a href="procedury.html">🛠️ Procedury</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>Amiodaron (Cordarone)</h1>
+            <button class="theme-btn" onclick="toggleTheme()">🌓 Tryb Jasny/Ciemny</button>
+        </header>
+
+        <div class="med-section">
+            <h3>Opis</h3>
+            <p>Silny lek antyarytmiczny klasy III (według klasyfikacji Vaughana Williamsa). Wydłuża czas trwania potencjału czynnościowego i okresu refrakcji komór oraz przedsionków.</p>
+            <p style="margin-top: 10px;"><strong>Postać w ZRM:</strong> Ampułki 150 mg / 3 ml.</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Mechanizm działania</h3>
+            <p>Głównie blokuje kanały potasowe (wydłuża repolaryzację). Posiada także właściwości blokowania kanałów sodowych, wapniowych oraz wykazuje niekonkurencyjne działanie alfa- i beta-adrenolityczne. Zmniejsza zapotrzebowanie mięśnia sercowego na tlen.</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Wskazania w PRM</h3>
+            <ul>
+                <li>Nagłe Zatrzymanie Krążenia (NZK) w mechanizmie VF/pVT (migotanie komór / częstoskurcz komorowy bez tętna) po 3. nieskutecznej defibrylacji.</li>
+                <li>Stabilny hemodynamicznie częstoskurcz komorowy (VT).</li>
+                <li>Napad nadkomorowych zaburzeń rytmu serca z szybką akcją komór (np. migotanie przedsionków, jeśli czas trwania arytmii jest krótki).</li>
+            </ul>
+        </div>
+
+        <div class="med-section danger-box">
+            <h3>❌ Przeciwwskazania (nie dotyczy NZK!)</h3>
+            <p>W przypadku pacjentów z zachowanym krążeniem:</p>
+            <ul>
+                <li>Bradykardia zatokowa, blok zatokowo-przedsionkowy.</li>
+                <li>Wydłużenie odstępu QT w EKG (ryzyko torsade de pointes).</li>
+                <li>Bloki przedsionkowo-komorowe II i III stopnia (bez stymulatora).</li>
+                <li>Ciężka niewydolność oddechowa, hipotonia.</li>
+                <li>Nadczynność lub choroby tarczycy (lek zawiera jod).</li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Dawkowanie dorosłych</h3>
+            <ul>
+                <li><strong>NZK (VF / pVT):</strong> 
+                    <ul>
+                        <li>Pierwsza dawka: <strong>300 mg i.v. / i.o.</strong> (2 ampułki) po 3. nieskutecznym wyładowaniu.</li>
+                        <li>Druga dawka: <strong>150 mg i.v. / i.o.</strong> (1 ampułka) po 5. nieskutecznym wyładowaniu.</li>
+                    </ul>
+                </li>
+                <li><strong>Pacjent z zachowanym krążeniem (częstoskurcz komorowy):</strong> 
+                    <ul>
+                        <li>Dawka: <strong>150 mg</strong> podawane w powolnym wlewie i.v. przez 10-20 minut (rozpuszczone w 100 ml Glukozy 5%). Nie podawać szybkiego bolusa!</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Dawkowanie dzieci</h3>
+            <ul>
+                <li><strong>NZK (VF / pVT):</strong> Dawka: <strong>5 mg/kg m.c. i.v. / i.o.</strong> podawane w bolusie po 3. wyładowaniu. Można powtórzyć dawkę 5 mg/kg m.c. po 5. wyładowaniu.</li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Drogi podania</h3>
+            <p>Dożylna (i.v.), Doszpikowa (i.o.).</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Działania niepożądane</h3>
+            <p>Ciężka hipotensja (gwałtowny spadek ciśnienia), bradykardia, bloki przedsionkowo-komorowe, uderzenia gorąca, nudności.</p>
+        </div>
+
+        <div class="med-section warning-box">
+            <h3>⚠️ Uwagi dla ratownika</h3>
+            <ul>
+                <li><strong>Bardzo ważne:</strong> Amiodaron w ampułkach jest niezgodny fizykochemicznie z solą fizjologiczną (NaCl 0,9%)! Może wytrącić się osad. <strong>Do rozcieńczania i wlewów u pacjentów z zachowanym krążeniem używaj wyłącznie Glukozy 5%.</strong></li>
+                <li>W NZK, jeśli nie masz pod ręką Glukozy 5%, wytyczne dopuszczają szybkie wstrzyknięcie czystego Amiodaronu z ampułek (w bolusie) bezpośrednio do linii i.v./i.o. i natychmiastowe obfite przepłukanie wkłucia.</li>
+                <li>Lek podawany obwodowo może powodować silne zapalenie żył – kłuć w duże naczynia.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || document.body.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.body.setAttribute("data-theme", newTheme);
+        }
+    </script>
+</body>
+</html>
