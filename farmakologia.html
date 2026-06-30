@@ -9,11 +9,13 @@
         [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
         body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
-        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        
+        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; height: 100vh; position: sticky; top: 0; overflow-y: auto; }
         .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
-        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
+        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+        .menu-items a { display: block; padding: 8px 12px; color: var(--text-color); text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; }
         .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
+        
         main { flex: 1; padding: 40px; }
         header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
         .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
@@ -22,7 +24,7 @@
         .med-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
         .med-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-color); font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.2s; }
         .med-card:hover { border-color: var(--accent-color); transform: translateY(-3px); }
-        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; height: auto; position: relative; } main { padding: 20px; } }
     </style>
 </head>
 <body data-theme="dark">
@@ -32,7 +34,16 @@
             <li><a href="https://github.io">🏠 Strona Główna</a></li>
             <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
             <li><a href="ekg.html">🫀 EKG</a></li>
+            <li><a href="kardiologia.html">❤️ Kardiologia</a></li>
+            <li><a href="pulmonologia.html">🫁 Pulmonologia</a></li>
+            <li><a href="neurologia.html">🧠 Neurologia</a></li>
+            <li><a href="pediatria.html">👶 Pediatria</a></li>
+            <li><a href="toksykologia.html">🧪 Toksykologia</a></li>
+            <li><a href="urazy.html">🩹 Urazy</a></li>
             <li><a href="procedury.html">🛠️ Procedury</a></li>
+            <li><a href="skale.html">📊 Skale</a></li>
+            <li><a href="badanya-laboratoryjne.html">🔬 Laboratorium</a></li>
+            <li><a href="anatomia.html">🦴 Anatomia</a></li>
         </ul>
     </nav>
     <main>
@@ -49,27 +60,6 @@
                 <a href="#" class="med-card">Amiodaron</a>
                 <a href="#" class="med-card">Atropina</a>
                 <a href="#" class="med-card">Adenozyna</a>
-            </div>
-        </div>
-
-        <div class="med-group">
-            <div class="med-group-title">🫀 Ostry Zespół Wieńcowy (OZW) i Krążenie</div>
-            <div class="med-list">
-                <a href="#" class="med-card">Aspiryna (ASA)</a>
-                <a href="#" class="med-card">Heparyna</a>
-                <a href="#" class="med-card">Nitrogliceryna</a>
-            </div>
-        </div>
-
-        <div class="med-group">
-            <div class="med-group-title">🧠 Analgezja, Sedacja i Drgawki</div>
-            <div class="med-list">
-                <a href="#" class="med-card">Morfina</a>
-                <a href="#" class="med-card">Fentanyl</a>
-                <a href="#" class="med-card">Ketamina</a>
-                <a href="#" class="med-card">Midazolam</a>
-                <a href="#" class="med-card">Diazepam</a>
-                <a href="#" class="med-card">Paracetamol</a>
             </div>
         </div>
     </main>
