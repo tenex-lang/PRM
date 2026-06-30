@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmakologia - Kompendium PRM</title>
+    <style>
+        :root { --bg-color: #f4f6f9; --text-color: #333; --sidebar-bg: #ffffff; --accent-color: #e63946; --card-bg: #ffffff; --border-color: #ddd; }
+        [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
+        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
+        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
+        .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
+        main { flex: 1; padding: 40px; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
+        .med-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .med-card { background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-color); font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.2s; }
+        .med-card:hover { border-color: var(--accent-color); transform: translateY(-3px); }
+        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav>
+        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
+        <ul class="menu-items">
+            <li><a href="index.html">🏠 Strona Główna</a></li>
+            <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
+            <li><a href="#">🫀 EKG</a></li>
+            <li><a href="#">🛠️ Procedury</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>Spis Leków PRM</h1>
+            <button class="theme-btn" onclick="toggleTheme()">🌓 Tryb Jasny/Ciemny</button>
+        </header>
+        <p>Wybierz lek z listy, aby zobaczyć opis, wskazania i dawkowanie:</p>
+        
+        <div class="med-list">
+            <a href="adrenalina.html" class="med-card">💊 Adrenalina</a>
+            <a href="#" class="med-card">💊 Amiodaron</a>
+            <a href="#" class="med-card">💊 Atropina</a>
+            <a href="#" class="med-card">💊 Adenozyna</a>
+            <a href="#" class="med-card">💊 Aspiryna</a>
+            <a href="#" class="med-card">💊 Heparyna</a>
+            <a href="#" class="med-card">💊 Morfina</a>
+            <a href="#" class="med-card">💊 Fentanyl</a>
+        </div>
+    </main>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || document.body.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.body.setAttribute("data-theme", newTheme);
+        }
+    </script>
+</body>
+</html>
