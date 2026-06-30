@@ -9,41 +9,27 @@
         [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; --section-bg: #1f1f1f; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
         body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
-        
-        /* Menu Boczne */
         nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
         .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
         .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; font-weight: 500; }
+        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
         .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
-        
-        /* Główna Zawartość */
-        main { flex: 1; padding: 40px; max-width: 1000px; }
+        main { flex: 1; padding: 40px; max-width: 900px; }
         header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; }
-        .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); font-weight: bold; }
-        
-        /* Karta Leku */
-        .med-section { background: var(--section-bg); padding: 22px; border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .med-section h3 { color: var(--accent-color); margin-bottom: 12px; font-size: 1.25rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+        .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
+        .med-section { background: var(--section-bg); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .med-section h3 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem; }
         .med-section p, .med-section ul { font-size: 1.05rem; line-height: 1.6; }
         .med-section ul { margin-left: 20px; }
-        .med-section li { margin-bottom: 8px; }
-        
-        /* Wyróżnienia i Alerty */
-        .warning-box { border-left: 6px solid #ffb703; background: rgba(255, 183, 3, 0.08); }
-        .warning-box h3 { color: #ffb703; border-left: none; padding-left: 0; }
-        .danger-box { border-left: 6px solid #d00000; background: rgba(208, 0, 0, 0.08); }
-        .danger-box h3 { color: #ff4d4d; border-left: none; padding-left: 0; }
-        .badge { background: var(--accent-color); color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; vertical-align: middle; margin-left: 5px; }
-        
+        .warning-box { border-left: 5px solid #ffb703; background: rgba(255, 183, 3, 0.1); }
         @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
     </style>
 </head>
 <body data-theme="dark">
     <nav>
-        <a href="https://github.io" class="logo">🚑 Kompendium PRM</a>
+        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
         <ul class="menu-items">
-            <li><a href="https://github.io">🏠 Strona Główna</a></li>
+            <li><a href="index.html">🏠 Strona Główna</a></li>
             <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
             <li><a href="ekg.html">🫀 EKG</a></li>
             <li><a href="procedury.html">🛠️ Procedury</a></li>
@@ -51,90 +37,29 @@
     </nav>
     <main>
         <header>
-            <h1>Adrenalina (Epinefryna) <span class="badge">A-1</span></h1>
+            <h1>Adrenalina (Epinefryna)</h1>
             <button class="theme-btn" onclick="toggleTheme()">🌓 Tryb Jasny/Ciemny</button>
         </header>
 
         <div class="med-section">
-            <h3>Opis ogólny i postać leku</h3>
-            <p>Endogenna katecholamina, silny hormon i neuroprzekaźnik pobudzający układ współczulny. W medycynie ratunkowej stanowi bezwzględny lek pierwszego rzutu w stanach bezpośredniego zagrożenia życia.</p>
-            <p style="margin-top: 10px;"><strong>Dostępna postać w ZRM:</strong> Ampułki 1 mg / 1 ml (roztwór 0,1% jako wodoro winian adrenaliny).</p>
+            <h3>Opis</h3>
+            <p>Naturalny hormon i neuroprzekaźnik, kluczowy lek w stanach zagrożenia życia (sympatykomimetyk).</p>
         </div>
 
-        <div class="med-section">
-            <h3>Mechanizm działania (Farmakodynamika)</h3>
+        <div class="med-sectionwarning-box">
+            <h3>⚠️ Uwagi dla ratownika</h3>
             <ul>
-                <li><strong>Receptory Alfa-1 (silne działanie):</strong> Powoduje gwałtowny skurcz naczyń krwionośnych obwodowych (wazokonstrukcja). Skutkuje to redystrybucją krwi do narządów kluczowych (mózg, serce) oraz wzrostem ciśnienia rozkurczowego, co poprawia perfuzję wieńcową.</li>
-                <li><strong>Receptory Beta-1 (silne działanie):</strong> Działa dodatnio inotropowo (zwiększa siłę skurczu), chronotropowo (przyspiesza akcję serca), dromotropowo (poprawia przewodnictwo) i batmotropowo (zwiększa pobudliwość mięśnia sercowego). Zwiększa zapotrzebowanie miokardium na tlen.</li>
-                <li><strong>Receptory Beta-2 (umiarkowane działanie):</strong> Powoduje silny rozkurcz mięśni gładkich oskrzeli (bronchodylatacja) oraz hamuje uwalnianie mediatorów zapalnych (histaminy, leukotrienów) z komórek tucznych.</li>
+                <li><strong>Ważne:</strong> Do podania i.m. używasz ampułki czystej (1 mg/1 ml). Do podania i.v. w NZK rozcieńczasz 1 mg do 10 ml NaCl 0,9%.</li>
             </ul>
         </div>
-
-        <div class="med-section">
-            <h3>Wskazania w PRM</h3>
-            <ul>
-                <li><strong>Nagłe Zatrzymanie Krążenia (NZK):</strong> W mechanizmie rytmów do defibrylacji (VF, pVT) oraz nie do defibrylacji (Asystolia, PEA).</li>
-                <li><strong>Wstrząs Anafilaktyczny:</strong> Ciężkie reakcje nadwrażliwości z niewydolnością oddechową (skurcz oskrzeli, obrzęk krtani) lub zapaścią krążeniową.</li>
-                <li><strong>Ciężka Bradykardia i Wstrząs Kardiogenny:</strong> Jako wlew ciągły w przypadku oporności na atropinę i stymulację przezskórną.</li>
-                <li><strong>Napad ciężkiej astmy:</strong> Gdy inne leki rozkurczowe (salbutamol i.v./nebulizacja) nie przynoszą poprawy.</li>
-                <li><strong>Krup / Podgłośniowe zapalenie krtani u dzieci:</strong> Podanie wziewne (nebulizacja) w celu zmniejszenia obrzęku dróg oddechowych.</li>
-            </ul>
-        </div>
-
-        <div class="med-section danger-box">
-            <h3>❌ Przeciwwskazania</h3>
-            <p>W stanach nagłego zagrożenia życia (NZK, głęboki wstrząs anafilaktyczny) **NIE MA ŻADNYCH PRZECIWSKAZAŃ** do podania adrenaliny.</p>
-            <p style="margin-top: 10px; font-size: 0.95rem; opacity: 0.85;"><em>W sytuacjach względnych (np. stabilna bradykardia, ciężka astma z zachowanym krążeniem) uważać na: niewyrównane nadciśnienie tętnicze, zaawansowaną chorobę wieńcową, tętniaki, ciężką nadczynność tarczycy oraz jaskrę z zamkniętym kątem przesączania.</em></p>
-        </div>
-
-        <div class="med-section">
-            <h3>Dawkowanie i schematy u Dorosłych</h3>
-            <ul>
-                <li><strong>Nagłe Zatrzymanie Krążenia (NZK):</strong>
-                    <ul>
-                        <li>Dawka: <strong>1 mg i.v. / i.o.</strong> co 3-5 minut (w praktyce co drugą pętlę algorytmu).</li>
-                        <li>Rytmy nie do defibrylacji (Asystolia/PEA): Podać **natychmiast** po uzyskaniu dostępu naczyniowego.</li>
-                        <li>Rytmy do defibrylacji (VF/pVT): Podać **po 3. nieskutecznym wyładowaniu** (równocześnie z Amiodaronem).</li>
-                    </ul>
-                </li>
-                <li><strong>Wstrząs Anafilaktyczny (oraz ciężka astma):</strong>
-                    <ul>
-                        <li>Dawka: <strong>0,5 mg i.m.</strong> (domięśniowo). W razie braku poprawy dawkę powtórzyć po 5-15 minutach.</li>
-                        <li>Miejsce podania: Wyłącznie przednio-boczna powierzchnia uda (mięsień obszerny boczny).</li>
-                    </ul>
-                </li>
-                <li><strong>Oporna bradykardia / Wstrząs (wlew ciągły):</strong>
-                    <ul>
-                        <li>Dawka: <strong>2–10 µg/min</strong> we wlewie krołowym (dawka modyfikowana pod kontrolą ciśnienia tętniczego).</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="med-section">
-            <h3>Dawkowanie i schematy u Dzieci (PALS)</h3>
-            <ul>
-                <li><strong>Nagłe Zatrzymanie Krążenia (NZK):</strong>
-                    <ul>
-                        <li>Dawka: <strong>10 µg/kg m.c. (0,01 mg/kg m.c.) i.v. / i.o.</strong> co 3-5 minut.</li>
-                    </ul>
-                </li>
-                <li><strong>Wstrząs Anafilaktyczny (domięśniowo i.m.):</strong>
-                    <ul>
-                        <li>Dzieci powyżej 12 lat: <strong>0,5 mg i.m.</strong></li>
-                        <li>Dzieci od 6 do 12 lat: <strong>0,3 mg i.m.</strong></li>
-                        <li>Dzieci poniżej 6 lat: <strong>0,15 mg i.m.</strong></li>
-                    </ul>
-                </li>
-                <li><strong>Nebulizacja (Krup / Ciężki stridor):</strong>
-                    <ul>
-                        <li>Dawka: <strong>4-5 mg</strong> (czyli 4-5 ampułek po 1 mg) bez rozcieńczania lub uzupełnione do 5 ml NaCl 0,9% w nebulizatorze dyszowym.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="med-section warning-box">
-            <h3>🛠️ Krytyczne instrukcje przygotowania roztworów (Ważne dla Ratownika!)</h3>
-            <ul>
-                <li><strong>Podanie domięśniowe (i.m.) we wstrząsie anafilaktycznym:</strong> Podajemy **czysty, nierozcieńczony roztwór** bezpośrednio z ampułki (stężenie 1 mg / 1 ml). Wyciągamy strzykawką 0,5 ml i kłujemy udo.</li>
+    </main>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || document.body.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.body.setAttribute("data-theme", newTheme);
+        }
+    </script>
+</body>
+</html>
