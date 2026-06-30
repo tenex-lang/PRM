@@ -10,58 +10,58 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
         body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
         
-        /* Menu Boczne */
-        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        /* Menu Boczne z przewijaniem */
+        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; height: 100vh; position: sticky; top: 0; overflow-y: auto; }
         .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
         .search-box { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-color); color: var(--text-color); font-size: 14px; }
-        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; font-weight: 500; }
+        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+        .menu-items a { display: block; padding: 8px 12px; color: var(--text-color); text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; }
         .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
         
         /* Główna zawartość */
-        main { flex: 1; padding: 40px; }
+        main { flex: 1; padding: 40px; min-width: 0; }
         header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); font-weight: bold; }
-        
-        /* Opis */
         .description { margin-bottom: 30px; color: var(--text-color); font-size: 1.05rem; line-height: 1.6; opacity: 0.9; }
         
-        /* Siatka Kategorii */
-        .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        .category-card { background: var(--card-bg); padding: 30px 20px; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-color); font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.2s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; }
+        .category-card { background: var(--card-bg); padding: 30px 15px; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-color); font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 140px; }
         .category-card:hover { border-color: var(--accent-color); transform: translateY(-4px); }
-        .category-card span { font-size: 28px; }
+        .category-card span { font-size: 32px; }
 
-        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; height: auto; position: relative; } main { padding: 20px; } }
     </style>
 </head>
 <body data-theme="dark">
 
-    <!-- Menu Boczne -->
+    <!-- MENU BOCZNE Z PEŁNĄ LISTĄ DZIAŁÓW -->
     <nav>
-        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
-        <!-- Wyszukiwarka filtrująca działy na żywo -->
+        <a href="https://github.io" class="logo">🚑 Kompendium PRM</a>
         <input type="text" id="mainSearch" class="search-box" placeholder="Szukaj działu..." onkeyup="filterCategories()">
         <ul class="menu-items">
-            <li><a href="index.html" class="active">🏠 Strona Główna</a></li>
+            <li><a href="https://github.io" class="active">🏠 Strona Główna</a></li>
             <li><a href="farmakologia.html">💊 Farmakologia</a></li>
-            <li><a href="#">🫀 EKG</a></li>
-            <li><a href="#">🛠️ Procedury</a></li>
+            <li><a href="ekg.html">🫀 EKG</a></li>
+            <li><a href="kardiologia.html">❤️ Kardiologia</a></li>
+            <li><a href="pulmonologia.html">🫁 Pulmonologia</a></li>
+            <li><a href="neurologia.html">🧠 Neurologia</a></li>
+            <li><a href="pediatria.html">👶 Pediatria</a></li>
+            <li><a href="toksykologia.html">🧪 Toksykologia</a></li>
+            <li><a href="urazy.html">🩹 Urazy</a></li>
+            <li><a href="procedury.html">🛠️ Procedury</a></li>
+            <li><a href="skale.html">📊 Skale</a></li>
+            <li><a href="badanya-laboratoryjne.html">🔬 Laboratorium</a></li>
+            <li><a href="anatomia.html">🦴 Anatomia</a></li>
         </ul>
     </nav>
 
-    <!-- Główna treść strony -->
     <main>
         <header>
             <h1>Panel Główny Ratownika</h1>
             <button class="theme-btn" onclick="toggleTheme()">🌓 Tryb Jasny/Ciemny</button>
         </header>
+        <p class="description"><strong>Szybkie Kompendium Medyczne PRM.</strong> Mobilna baza wiedzy dla personelu ratowniczego.</p>
 
-        <p class="description">
-            <strong>Szybkie Kompendium Medyczne PRM.</strong> Mobilna baza wiedzy stworzona z myślą o ratownikach medycznych, pielęgniarkach systemu oraz lekarzach. Zawiera aktualne wytyczne, dawkowanie leków, schematy procedur oraz opisy jednostek chorobowych w stanach nagłych.
-        </p>
-
-        <!-- Wszystkie 12 zaplanowanych działów z Etapu 2 -->
         <div class="categories-grid" id="categoriesGrid">
             <a href="farmakologia.html" class="category-card"><span>💊</span>Farmakologia</a>
             <a href="ekg.html" class="category-card"><span>🫀</span>EKG</a>
@@ -71,36 +71,28 @@
             <a href="pediatria.html" class="category-card"><span>👶</span>Pediatria</a>
             <a href="toksykologia.html" class="category-card"><span>🧪</span>Toksykologia</a>
             <a href="urazy.html" class="category-card"><span>🩹</span>Urazy</a>
-            <a href="procedury.html" class="category-card"><span>🛠️</span>Procedury</a>
+            <a href="procedury.html" class="category-card"><span>🛠</span>Procedury</a>
             <a href="skale.html" class="category-card"><span>📊</span>Skale</a>
-            <a href="badania-laboratoryjne.html" class="category-card"><span>🔬</span>Badania laboratoryjne</a>
+            <a href="badanya-laboratoryjne.html" class="category-card"><span>🔬</span>Badania laboratoryjne</a>
             <a href="anatomia.html" class="category-card"><span>🦴</span>Anatomia</a>
         </div>
     </main>
 
     <script>
-        // Funkcja zmiany trybu jasny/ciemny
         function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute("data-theme") || document.body.getAttribute("data-theme");
             const newTheme = currentTheme === "dark" ? "light" : "dark";
             document.documentElement.setAttribute("data-theme", newTheme);
             document.body.setAttribute("data-theme", newTheme);
         }
-
-        // Funkcja wyszukiwarki - filtruje kafelki w czasie rzeczywistym
         function filterCategories() {
             const input = document.getElementById('mainSearch');
             const filter = input.value.toLowerCase();
             const grid = document.getElementById('categoriesGrid');
             const cards = grid.getElementsByClassName('category-card');
-
             for (let i = 0; i < cards.length; i++) {
                 const txtValue = cards[i].textContent || cards[i].innerText;
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
+                if (txtValue.toLowerCase().indexOf(filter) > -1) { cards[i].style.display = ""; } else { cards[i].style.display = "none"; }
             }
         }
     </script>
