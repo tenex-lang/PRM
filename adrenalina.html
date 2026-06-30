@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrenalina - Kompendium PRM</title>
+    <style>
+        :root { --bg-color: #f4f6f9; --text-color: #333; --sidebar-bg: #ffffff; --accent-color: #e63946; --card-bg: #ffffff; --border-color: #ddd; --section-bg: #f8f9fa; }
+        [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; --section-bg: #1f1f1f; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
+        
+        /* Menu Boczne */
+        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
+        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
+        .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
+        
+        /* Zawartość */
+        main { flex: 1; padding: 40px; max-width: 900px; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; }
+        .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
+        
+        /* Karta leku */
+        .med-section { background: var(--section-bg); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .med-section h3 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem; }
+        .med-section p, .med-section ul { font-size: 1.05rem; line-height: 1.6; }
+        .med-section ul { margin-left: 20px; }
+        .warning-box { border-left: 5px solid #ffb703; background: rgba(255, 183, 3, 0.1); }
+        
+        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav>
+        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
+        <ul class="menu-items">
+            <li><a href="index.html">🏠 Strona Główna</a></li>
+            <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
+            <li><a href="#">🫀 EKG</a></li>
+            <li><a href="#">🛠️ Procedury</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>Adrenalina (Epinefryna)</h1>
+            <button class="theme-btn" onclick="toggleTheme()">🌓 Tryb Jasny/Ciemny</button>
+        </header>
+
+        <div class="med-section">
+            <h3>Opis</h3>
+            <p>Naturalny hormon i neuroprzekaźnik, kluczowy lek w stanach zagrożenia życia (sympatykomimetyk).</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Mechanizm działania</h3>
+            <p>Działa silnie na receptory alfa-1 (skurcz naczyń krwionośnych, wzrost ciśnienia) oraz beta-1 (wzrost częstości skurczów serca i siły skurczu) i beta-2 (rozkurcz oskrzeli).</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Wskazania</h3>
+            <ul>
+                <li>Nagłe zatrzymanie krążenia (NZK) w każdym rytmie.</li>
+                <li>Wstrząs anafilaktyczny.</li>
+                <li>Ciężka bradykardia oporna na inne leki.</li>
+                <li>Napad ciężkiej astmy (gdy inne leki zawiodą).</li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Przeciwwskazania</h3>
+            <p>W stanach nagłego zagrożenia życia (NZK, anafilaksja) <strong>brak przeciwwskazań</strong>.</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Dawkowanie dorosłych</h3>
+            <ul>
+                <li><strong>NZK:</strong> 1 mg co 3-5 minut i.v./i.o. (w rytmach nie do defibrylacji natychmiast, w do defibrylacji po 3. wyładowaniu).</li>
+                <li><strong>Anafilaksja:</strong> 0,5 mg domięśniowo (i.m.) w przednio-boczną powierzchnię uda.</li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Dawkowanie dzieci</h3>
+            <ul>
+                <li><strong>NZK:</strong> 10 µg/kg m.c. (0,01 mg/kg m.c.) dożylnie/doszpikowo.</li>
+                <li><strong>Anafilaksja i.m.:</strong> Dzieci >12 lat: 0,5 mg | 6-12 lat: 0,3 mg | <6 lat: 0,15 mg.</li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Drogi podania</h3>
+            <p>Dożylna (i.v.), Doszpikowa (i.o.), Domięśniowa (i.m. – wyłącznie w anafilaksji).</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Działania niepożądane</h3>
+            <p>Tachykardia, komorowe zaburzenia rytmu serca, gwałtowny wzrost ciśnienia tętniczego, lęk, drżenia mięśniowe.</p>
+        </div>
+
+        <div class="med-section warning-box">
+            <h3>⚠️ Uwagi dla ratownika</h3>
+            <ul>
+                <li><strong>Ważne:</strong> Nie pomyl stężeń! Do podania i.m. używasz ampułki czystej (1 mg/1 ml). Do podania i.v. w NZK rozcieńczasz 1 mg do 10 ml NaCl 0,9% (uzyskujesz stężenie 0,1 mg/1 ml).</li>
+                <li>Adrenalina ulega dezaktywacji w roztworach zasadowych (np. wodorowęglan sodu).</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || document.body.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.body.setAttribute("data-theme", newTheme);
+        }
+    </script>
+</body>
+</html>
