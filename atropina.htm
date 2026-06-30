@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atropina - Kompendium PRM</title>
+    <style>
+        :root { --bg-color: #f4f6f9; --text-color: #333; --sidebar-bg: #ffffff; --accent-color: #e63946; --card-bg: #ffffff; --border-color: #ddd; --section-bg: #f8f9fa; }
+        [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --sidebar-bg: #1e1e1e; --accent-color: #ff4d6d; --card-bg: #2a2a2a; --border-color: #333; --section-bg: #1f1f1f; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { display: flex; background: var(--bg-color); color: var(--text-color); min-height: 100vh; }
+        nav { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .logo { font-size: 20px; font-weight: bold; color: var(--accent-color); text-decoration: none; }
+        .menu-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .menu-items a { display: block; padding: 10px; color: var(--text-color); text-decoration: none; border-radius: 6px; }
+        .menu-items a.active, .menu-items a:hover { background: var(--accent-color); color: white; }
+        main { flex: 1; padding: 40px; max-width: 900px; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; }
+        .theme-btn { padding: 8px 16px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--sidebar-bg); color: var(--text-color); }
+        .med-section { background: var(--section-bg); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .med-section h3 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem; }
+        .med-section p, .med-section ul { font-size: 1.05rem; line-height: 1.6; }
+        .med-section ul { margin-left: 20px; }
+        .warning-box { border-left: 5px solid #ffb703; background: rgba(255, 183, 3, 0.1); }
+        @media (max-width: 768px) { body { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav>
+        <a href="index.html" class="logo">🚑 Kompendium PRM</a>
+        <ul class="menu-items">
+            <li><a href="index.html">🏠 Strona Główna</a></li>
+            <li><a href="farmakologia.html" class="active">💊 Farmakologia</a></li>
+            <li><a href="ekg.html">🫀 EKG</a></li>
+            <li><a href="procedury.html">🛠️ Procedury</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>Atropina (Atropinum Sulfuricum)</h1>
+            <button class="theme-btn" onclick="toggleTheme()">🌓 Tryb Jasny/Ciemny</button>
+        </header>
+
+        <div class="med-section">
+            <h3>Opis i postać leku</h3>
+            <p>Parasympatykolityk (lek antycholinergiczny). Blokuje receptory muskarynowe, znosząc wpływ nerwu błędnego na serce.</p>
+            <p style="margin-top: 10px;"><strong>Postać w ZRM:</strong> Ampułki 1 mg / 1 ml.</p>
+        </div>
+
+        <div class="med-section">
+            <h3>Wskazania w PRM</h3>
+            <ul>
+                <li>Objawowa, niestabilna bradykardia (akcja serca < 50/min dająca objawy wstrząsu lub niedokrwienia).</li>
+                <li>Zatrucia związkami fosforoorganicznymi (np. pestycydami) lub gazami bojowymi – jako odtrutka.</li>
+            </ul>
+        </div>
+
+        <div class="med-section">
+            <h3>Dawkowanie dorosłych</h3>
+            <ul>
+                <li><strong>Bradykardia:</strong> <strong>0,5 mg i.v. / i.o.</strong> Powtarzać co 3–5 minut w razie potrzeby. Dawka maksymalna wynosi <strong>3 mg</strong> (pełne zablokowanie nerwu błędnego).</li>
+                <li><strong>Zatrucia:</strong> 1–2 mg i.v. co 5–15 minut, aż do uzyskania cech atropinizacji (suchość śluzówek, rozszerzenie źrenic, tachykardia).</li>
+            </ul>
+        </div>
+
+        <div class="med-section warning-box">
+            <h3>⚠️ Uwagi dla ratownika</h3>
+            <ul>
+                <li>Podanie dawki mniejszej niż 0,5 mg u dorosłego może wywołać **paradoksalną bradykardię** (zwolnienie akcji serca).</li>
+                <li>Atropina jest nieskuteczna u pacjentów po przeszczepie serca (brak unerwienia przez nerw błędny) oraz rzadko działa w blokach AV II stopnia typu Mobitz II i blokach AV III stopnia. Tam lekiem wyboru jest stymulacja przezskórna lub adrenalina.</li>
+            </ul>
+        </div>
+    </main>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || document.body.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.body.setAttribute("data-theme", newTheme);
+        }
+    </script>
+</body>
+</html>
